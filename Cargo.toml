@@ -1,0 +1,9 @@
+[package]
+name = "rs-read-psql"
+version = "0.1.0"
+authors = ["Yinghua <yinghuachai0@gmail.com>"]
+
+[dependencies]
+postgres = { version = "0.15.1", features = ["with-chrono"] }
+time="*"
+chrono="*"
