@@ -2,7 +2,8 @@
 extern crate time;
 use time::PreciseTime;
 
-use postgres::{Connection, TlsMode};
+use postgres::{Connection, TlsMode, types};
+use postgres::types::FromSql;
 
 extern crate chrono;
 use chrono::NaiveDate;
@@ -45,8 +46,8 @@ struct Nspl {
     oacc: Option<String>,
     oacn: Option<String>,
 
-    longtitude: f64,
-    latitude: f64,
+    longitude: f32,
+    latitude: f32,
     spatial_accuracy: Option<String>,
     last_upload: NaiveDate,
     location: Option<String>,
@@ -100,7 +101,7 @@ pub fn retrieve_nspl() {
             oacc: rows.get(28),
             oacn: rows.get(29),
 
-            longtitude: rows.get(30),
+            longitude: rows.get(30),
             latitude: rows.get(31),
             spatial_accuracy: rows.get(32),
             last_upload: rows.get(33),
