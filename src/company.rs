@@ -87,7 +87,7 @@ pub fn retrieve_company() {
 
 
     for rows in &conn.query("SELECT * FROM companydata", &[]).unwrap() {
-        let company = Company {
+        let _company = Company {
             name: rows.get(0),
             number: rows.get(1),
             careof: rows.get(2),

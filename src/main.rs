@@ -60,9 +60,9 @@ fn concurrent_read() {
         nspl_tx.send(nspl).unwrap();
     });
 
-    let leo_channel = leo_rx.recv().unwrap();
-    let company_channel = company_rx.recv().unwrap();
-    let nspl_channel = nspl_rx.recv().unwrap();
+    let _leo_channel = leo_rx.recv().unwrap();
+    let _company_channel = company_rx.recv().unwrap();
+    let _nspl_channel = nspl_rx.recv().unwrap();
 
     let end = PreciseTime::now();
     let duration = start.to(end);
@@ -77,6 +77,6 @@ fn concurrent_read() {
 fn main() {
 
     concurrent_read();
-    //    sequential_read();
+    sequential_read();
 
 }

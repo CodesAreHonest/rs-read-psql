@@ -2,8 +2,8 @@
 extern crate time;
 use time::PreciseTime;
 
-use postgres::{Connection, TlsMode, types};
-use postgres::types::FromSql;
+use postgres::{Connection, TlsMode};
+//use postgres::types::FromSql;
 
 extern crate chrono;
 use chrono::NaiveDate;
@@ -64,7 +64,7 @@ pub fn retrieve_nspl() {
 
     for rows in &conn.query("SELECT * FROM nspl", &[]).unwrap() {
 
-        let postcode = Nspl {
+        let _postcode = Nspl {
             postcode1: rows.get(0),
             postcode2: rows.get(1),
             postcode3: rows.get(2),

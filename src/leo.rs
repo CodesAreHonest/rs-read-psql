@@ -44,7 +44,7 @@ pub fn retrieve_leo() {
 
     for rows in &conn.query("SELECT * FROM leo", &[]).unwrap() {
 
-        let subject = Leo {
+        let _subject = Leo {
             ukprn: rows.get(0),
             provider_name: rows.get(1),
             region: rows.get(2),
